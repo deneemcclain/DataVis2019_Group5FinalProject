@@ -37,9 +37,28 @@ pal3 <- colorNumeric(palette = "plasma", domain = sb_zip_data$total.populationE)
 pal4 <- colorFactor(palette = 'Set1', domain = businesses.spatial$Category)
 
 # Define UI for application that draws a histogram
-ui <- navbarPage("Potential Problem Areas in South Bend, IN",
+ui <- navbarPage("South Bend Command Center",
    tabPanel("About", 
-            "This project was completed by Courtney Cosgrove, Denee McClain, and Jay Richardson. In it, we explore various opportunities for a greater commitment of resources. We present this data to the mayor of South Bend and his staff in hopes that they will identify problem areas and areas for improvement in the city of South Bend."),
+            tabPanel("About",
+                     mainPanel(
+                       h2("Guide to Use"),
+                       p("This dashboard provides a highlight of some
+                         potential problem areas within the city of South Bend, IN"),
+                       h3("Street Lights & Abandoned Buildings"),
+                       p("Use this tab to explore the relationship between street lights and
+                             abandoned buildings in different parts of South Bend. This may help
+                             to identify areas that might be at-risk for safety/dilapidated buildings."),
+                       h3("Population & Business Distribution"),
+                       p("Use this tab to get overview of where people & businesses are located throughout the city,
+                             and explore relationships between these two variables that might highlight issues."),
+                       h3("Code Violation Explorer"),
+                       p("Use this tab to explore different Code Violations at establishments throughout the city.
+                             This may help to identify parts of the city that are potentially neglected, indicated by
+                             high concentration of code violations"),
+                       br(),
+                       h5("Authors: Courtney Cosgrove, Denee McClain, and Jay Richardson")
+                       )
+            )),
    tabPanel("Distribution of Abandoned Buildings and Street Lights by Zip Code",
             sidebarLayout(
               sidebarPanel(
@@ -54,7 +73,7 @@ ui <- navbarPage("Potential Problem Areas in South Bend, IN",
                 plotOutput("abandonedLights")
               )
             )),
-   tabPanel("Demographic And Business Info", 
+   tabPanel("Population & Business Distribution", 
             sidebarLayout(
               
               sidebarPanel(

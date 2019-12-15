@@ -58,8 +58,27 @@ save(buildings, file = "buildings_clean.RData")
 ## Street Lights & Abandoned Properties Tab ##
 
 ## Business Info Tab ##
+# Read in initial Business Data file
+Businesses <- read_csv("FinalProject Files/Business_Licenses.csv")
+
+# Geocode Business Data
+
+# Set up google API key:
+register_google(key = "AIzaSyAe2Brb2eyF0ZeyEncpk_36JQkC-o9Xyvg")
+
+# Create table of geocoded data
+coded_data <- geocode(Businesses$Full_Address, output = "more")
+
+# Add columns to data frame
+Businesses$lon <- coded_data$lon
+Businesses$lat <- coded_data$lat
+Businesses$loctype <- coded_data$loctype
+Businesses$type <- coded_data$type
+
+# Save Data Frame
+write_csv(Businesses, path = "FinalProject Files/Geocoded_Business_Licenses.csv")
 # Read Geocoded Business Data from file
-Businesses <- read_csv("Geocoded_Business_Licenses.txt")
+Businesses <- read_csv("Geocoded_Business_Licenses.csv")
 
 BusinessesClean <- na.omit(Businesses) %>% filter(State == "IN")
 
