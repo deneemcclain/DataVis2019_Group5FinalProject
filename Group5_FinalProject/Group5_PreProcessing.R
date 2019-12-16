@@ -1,6 +1,14 @@
 # Data Visualization
 # Fall 2019
 # Group 5 Final Project - Preprocessing Code
+#
+# Credits (including tab code and preprocessing code):
+# Abandoned Properties Tab - Denee McClain
+# Code Enforcement Violations Tab - Jay Richardson
+# Population and Business Distribution Tab - Courtney Cosgrove
+#
+#    
+#
 
 setwd("C:/Users/denee/Documents/University of Notre Dame Data Science/Fall 2019/Data Visualization/Assignments/Group5_FinalProject")
 # Load libraries

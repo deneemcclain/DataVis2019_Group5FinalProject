@@ -1,10 +1,10 @@
 #
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
+# Credits (including tab code and preprocessing code):
+# Abandoned Properties Tab - Denee McClain
+# Code Enforcement Violations Tab - Jay Richardson
+# Population and Business Distribution Tab - Courtney Cosgrove
 #
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
+#    
 #
 library(DT)
 library(shiny)
